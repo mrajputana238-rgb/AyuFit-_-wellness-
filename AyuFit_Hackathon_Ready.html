@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AyuFit - a safety-first wellness and movement routine builder.">
+  <title>AyuFit — Move Better, Feel Stronger</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage: {
+              50: '#f4f7f4',
+              100: '#e5ede5',
+              500: '#739e73',
+              600: '#5a7e5a',
+              700: '#466246'
+            }
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-sage-50 text-slate-800 font-sans antialiased">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-sage-100">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#home" class="flex items-center space-x-2" aria-label="AyuFit home">
+        <span class="text-2xl">🌱</span>
+        <span class="text-xl font-bold tracking-tight text-sage-700">AyuFit</span>
+      </a>
+
+      <nav class="hidden md:flex space-x-8 font-medium text-sm text-slate-600" aria-label="Main navigation">
+        <a href="#home" class="hover:text-sage-600 transition">Home</a>
+        <a href="#recommendation" class="hover:text-sage-600 transition">Routine Builder</a>
+        <a href="#tracker" class="hover:text-sage-600 transition">Daily Tracker</a>
+        <a href="#safety" class="hover:text-sage-600 transition">Safety First</a>
+      </nav>
+
+      <a href="#recommendation"
+         class="bg-sage-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-sage-700 transition shadow-sm">
+        Get Started
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section id="home" class="max-w-6xl mx-auto px-4 py-16 md:py-24 text-center">
+      <div class="inline-block bg-sage-100 text-sage-700 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase mb-6">
+        Health & Longevity Focus
+      </div>
+
+      <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
+        Move Better, <span class="text-sage-600">Feel Stronger.</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-lg text-slate-600 mb-10 leading-relaxed">
+        Personalized, safe, and age-appropriate movement suggestions focused on everyday
+        well-being—not body aesthetics.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#recommendation"
+           class="bg-sage-600 text-white font-medium px-6 py-3.5 rounded-xl hover:bg-sage-700 transition shadow-md">
+          Build My Routine
+        </a>
+        <a href="#safety"
+           class="bg-white text-sage-700 border border-sage-200 font-medium px-6 py-3.5 rounded-xl hover:bg-sage-50 transition">
+          Why Safety First?
+        </a>
+      </div>
+    </section>
+
+    <!-- Recommendation Engine -->
+    <section id="recommendation" class="max-w-4xl mx-auto px-4 py-12">
+      <div class="bg-white rounded-2xl shadow-xl border border-sage-100 p-6 md:p-10">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
+            Personalized Exercise Generator
+          </h2>
+          <p class="text-slate-500 text-sm mt-1">
+            Choose your preferences to receive general, safety-first movement suggestions.
+          </p>
+        </div>
+
+        <form id="routineForm" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <div>
+              <label for="goal" class="block text-sm font-semibold text-slate-700 mb-2">
+                Primary Goal
+              </label>
+              <select id="goal" required
+                class="w-full bg-sage-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-500">
+                <option value="">Select Goal...</option>
+                <option value="stamina">Stamina & Cardio</option>
+                <option value="strength">Functional Strength</option>
+                <option value="flexibility">Flexibility & Mobility</option>
+                <option value="wellness">General Wellness</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="ageGroup" class="block text-sm font-semibold text-slate-700 mb-2">
+                Age Group
+              </label>
+              <select id="ageGroup" required
+                class="w-full bg-sage-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-500">
+                <option value="">Select Age Group...</option>
+                <option value="teen">Teen (13-19)</option>
+                <option value="adult">Adult (20-50)</option>
+                <option value="senior">Senior (50+)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="energyLevel" class="block text-sm font-semibold text-slate-700 mb-2">
+                Current Energy Level
+              </label>
+              <select id="energyLevel" required
+                class="w-full bg-sage-50 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-500">
+                <option value="">Select Energy...</option>
+                <option value="low">Low (Gentle)</option>
+                <option value="medium">Medium (Moderate)</option>
+                <option value="high">High (More Active)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="text-center pt-4">
+            <button type="submit"
+              class="w-full md:w-auto bg-sage-600 text-white font-semibold px-8 py-3.5 rounded-xl hover:bg-sage-700 transition shadow-md">
+              Generate Safe Routine
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="max-w-6xl mx-auto px-4 py-10" aria-live="polite">
+      <div class="mb-6 text-center md:text-left">
+        <h3 class="text-xl font-bold text-slate-800">Your Tailored Routine</h3>
+        <p id="resultSummary" class="text-xs text-slate-500">
+          Curated using your selected goal, age group and energy level.
+        </p>
+      </div>
+
+      <div id="resultsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="col-span-full bg-white border border-dashed border-sage-300 rounded-2xl p-10 text-center text-slate-400">
+          <span class="text-4xl block mb-2">📋</span>
+          Select your preferences and click
+          <strong class="text-slate-600">"Generate Safe Routine"</strong>.
+        </div>
+      </div>
+    </section>
+
+    <!-- Tracker -->
+    <section id="tracker" class="max-w-4xl mx-auto px-4 py-12">
+      <div class="bg-white rounded-2xl shadow-sm border border-sage-100 p-6 md:p-8">
+
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-slate-900">Daily Health & Habit Log</h3>
+            <p class="text-slate-500 text-xs mt-0.5">
+              Your demo progress is saved locally in this browser.
+            </p>
+          </div>
+          <button id="resetTracker"
+            class="mt-3 md:mt-0 text-xs text-rose-600 hover:underline font-medium">
+            Reset Data
+          </button>
+        </div>
+
+        <div id="trackerMessage" class="hidden mb-5 rounded-lg px-4 py-3 text-sm bg-sage-100 text-sage-700"></div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+          <!-- Water -->
+          <div class="bg-sage-50/50 p-5 rounded-xl border border-sage-100 flex flex-col justify-between">
+            <div>
+              <span class="text-lg">💧</span>
+              <h4 class="font-semibold text-slate-800 text-sm mt-1">Water Check-In</h4>
+              <p class="text-xs text-slate-500 mt-0.5">
+                Log glasses here as a simple daily habit check-in. Hydration needs vary by person and conditions.
+              </p>
+            </div>
+
+            <div id="waterGlasses" class="flex flex-wrap gap-2 my-4"></div>
+
+            <span id="waterCountText" class="text-xs font-medium text-sage-700">
+              0 / 8 Glasses Logged
+            </span>
+          </div>
+
+          <!-- Movement -->
+          <div class="bg-sage-50/50 p-5 rounded-xl border border-sage-100 flex flex-col justify-between">
+            <div>
+              <span class="text-lg">✅</span>
+              <h4 class="font-semibold text-slate-800 text-sm mt-1">Daily Movement Check-In</h4>
+              <p class="text-xs text-slate-500 mt-0.5">
+                Record whether you completed a comfortable movement session today.
+              </p>
+            </div>
+
+            <div class="my-4">
+              <label class="flex items-center space-x-3 cursor-pointer">
+                <input type="checkbox" id="movementCheck"
+                  class="w-5 h-5 accent-sage-600 rounded">
+                <span class="text-sm font-medium text-slate-700">
+                  Movement session completed
+                </span>
+              </label>
+            </div>
+
+            <span id="movementStatusText" class="text-xs font-medium text-slate-400">
+              Status: Pending
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety -->
+    <section id="safety" class="max-w-4xl mx-auto px-4 py-12 text-center">
+      <div class="bg-amber-50 border border-amber-200/60 rounded-2xl p-6 md:p-8">
+        <span class="text-3xl mb-2 block">🛡️</span>
+        <h4 class="font-bold text-amber-900 text-lg mb-2">Our Safety-First Commitment</h4>
+        <p class="text-amber-800 text-sm max-w-xl mx-auto leading-relaxed">
+          AyuFit focuses on comfortable movement and general well-being rather than weight,
+          appearance or extreme fitness goals. Stop if you feel pain, dizziness, unusual
+          shortness of breath, or feel unwell. Use stable support where needed.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-sage-100 mt-12 py-8 text-center text-xs text-slate-500">
+    <p class="mb-1">AyuFit — Built with care for the College Hackathon 🌿</p>
+    <p class="max-w-2xl mx-auto px-4">
+      Disclaimer: AyuFit provides general wellness information and is not a medical or diagnostic tool.
+      If you have health concerns, an injury, or questions about starting exercise, speak with a qualified healthcare professional.
+    </p>
+  </footer>
+
+  <script>
+    /* =========================================================
+       1. EXERCISE DATABASE
+       ========================================================= */
+    const exerciseDatabase = [
+      {
+        id: 1,
+        goal: "stamina",
+        ageGroup: "all",
+        energyLevel: "medium",
+        name: "Brisk Indoor Marching",
+        duration: "5 minutes",
+        instructions: "Stand tall and march in place, gently swinging your arms. Keep a steady, comfortable rhythm.",
+        safetyTip: "Keep steps light and use a clear, stable space. Stop if you feel dizzy.",
+        easierAlternative: "Seated marching while sitting upright in a stable chair."
+      },
+      {
+        id: 2,
+        goal: "stamina",
+        ageGroup: "teen",
+        energyLevel: "high",
+        name: "Low-Impact Step-Touch",
+        duration: "6 minutes",
+        instructions: "Step gently to one side, bring the other foot to tap beside it, then repeat on the other side.",
+        safetyTip: "Use a comfortable pace and keep the movement controlled.",
+        easierAlternative: "Slow side-to-side weight shifts without wide steps."
+      },
+      {
+        id: 3,
+        goal: "strength",
+        ageGroup: "all",
+        energyLevel: "medium",
+        name: "Wall Push-Ups",
+        duration: "3 sets × 10 reps",
+        instructions: "Stand an arm's length from a wall, place palms on it, bend the elbows gently, then push back.",
+        safetyTip: "Use a stable wall and move through a comfortable range. Stop if you feel pain.",
+        easierAlternative: "Use a higher, stable surface such as a sturdy countertop."
+      },
+      {
+        id: 4,
+        goal: "strength",
+        ageGroup: "adult",
+        energyLevel: "high",
+        name: "Chair Sit-to-Stand",
+        duration: "3 sets × 8 reps",
+        instructions: "Sit on a sturdy chair, lean slightly forward, then stand comfortably and return to sitting with control.",
+        safetyTip: "Use a sturdy chair on a non-slip surface and keep the movement comfortable.",
+        easierAlternative: "Use your hands lightly on the chair for support."
+      },
+      {
+        id: 5,
+        goal: "flexibility",
+        ageGroup: "all",
+        energyLevel: "low",
+        name: "Seated Torso Twist",
+        duration: "1 min per side",
+        instructions: "Sit tall and gently rotate your upper body to one side while breathing normally. Repeat on the other side.",
+        safetyTip: "Never force the twist. Move only through a comfortable range.",
+        easierAlternative: "Gentle shoulder rolls while seated or standing."
+      },
+      {
+        id: 6,
+        goal: "flexibility",
+        ageGroup: "senior",
+        energyLevel: "low",
+        name: "Cat-Cow Stretch",
+        duration: "5 gentle breaths",
+        instructions: "From hands and knees, gently round and relax the back. A seated version can be done with hands on the knees.",
+        safetyTip: "Move slowly and comfortably; avoid sharp or jerky movements.",
+        easierAlternative: "Seated spinal flexion and extension using a stable chair."
+      },
+      {
+        id: 7,
+        goal: "wellness",
+        ageGroup: "all",
+        energyLevel: "low",
+        name: "Breathing & Posture Reset",
+        duration: "3 minutes",
+        instructions: "Sit or stand comfortably, relax your shoulders, and take slow, natural breaths.",
+        safetyTip: "Do not force breath-holding. Return to normal breathing if you feel uncomfortable.",
+        easierAlternative: "Simply sit comfortably and take a few slow breaths."
+      },
+      {
+        id: 8,
+        goal: "wellness",
+        ageGroup: "teen",
+        energyLevel: "medium",
+        name: "Standing Balance Reach",
+        duration: "2 minutes",
+        instructions: "Stand comfortably and reach gently in different directions. Switch sides while keeping control.",
+        safetyTip: "Keep a wall or sturdy chair nearby if you need balance support.",
+        easierAlternative: "Keep both feet on the floor while doing gentle reaches."
+      }
+    ];
+
+    /* =========================================================
+       2. RECOMMENDATION ENGINE
+       ========================================================= */
+    const routineForm = document.getElementById("routineForm");
+    const resultsContainer = document.getElementById("resultsContainer");
+    const resultSummary = document.getElementById("resultSummary");
+
+    function getCompatibilityScore(exercise, goal, ageGroup, energyLevel) {
+      let score = 0;
+
+      // Goal is the most important factor.
+      if (exercise.goal === goal) score += 60;
+
+      // "all" is compatible with every age group.
+      if (exercise.ageGroup === "all") score += 20;
+      else if (exercise.ageGroup === ageGroup) score += 20;
+      else score -= 20;
+
+      // Exact energy match gets priority.
+      if (exercise.energyLevel === energyLevel) score += 20;
+      else if (
+        (energyLevel === "medium" && exercise.energyLevel === "low") ||
+        (energyLevel === "low" && exercise.energyLevel === "medium")
+      ) {
+        score += 8;
+      } else {
+        score -= 8;
+      }
+
+      return score;
+    }
+
+    function getMatchLabel(score, exactGoal) {
+      if (exactGoal && score >= 85) return "Strong Match";
+      if (exactGoal) return "Good Match";
+      return "Additional Wellness Option";
+    }
+
+    function getRecommendations(goal, ageGroup, energyLevel) {
+      const scored = exerciseDatabase.map(exercise => {
+        const score = getCompatibilityScore(exercise, goal, ageGroup, energyLevel);
+        return {
+          exercise,
+          score,
+          exactGoal: exercise.goal === goal
+        };
+      });
+
+      // Prioritize goal matches, then compatibility score.
+      scored.sort((a, b) => {
+        if (a.exactGoal !== b.exactGoal) return a.exactGoal ? -1 : 1;
+        return b.score - a.score;
+      });
+
+      // Prefer goal matches that are not age-incompatible.
+      const safeGoalMatches = scored.filter(
+        item => item.exactGoal && item.score >= 60
+      );
+
+      const otherSafeOptions = scored.filter(
+        item => !item.exactGoal && item.score >= 40
+      );
+
+      const selected = [...safeGoalMatches, ...otherSafeOptions].slice(0, 3);
+
+      return selected;
+    }
+
+    /* =========================================================
+       3. RESULT RENDERING
+       ========================================================= */
+    function renderResults(recommendations, goal, ageGroup, energyLevel) {
+      resultsContainer.innerHTML = "";
+
+      if (recommendations.length === 0) {
+        resultsContainer.innerHTML = `
+          <div class="col-span-full bg-white border border-amber-200 rounded-2xl p-8 text-center">
+            <div class="text-3xl mb-3">🛡️</div>
+            <h4 class="font-bold text-slate-900 mb-2">No suitable suggestion found</h4>
+            <p class="text-sm text-slate-600">
+              Try another combination of goal, age group and energy level.
+            </p>
+          </div>
+        `;
+        return;
+      }
+
+      const goalName = {
+        stamina: "Stamina & Cardio",
+        strength: "Functional Strength",
+        flexibility: "Flexibility & Mobility",
+        wellness: "General Wellness"
+      }[goal];
+
+      const ageName = {
+        teen: "Teen",
+        adult: "Adult",
+        senior: "Senior"
+      }[ageGroup];
+
+      const energyName = {
+        low: "Low",
+        medium: "Medium",
+        high: "High"
+      }[energyLevel];
+
+      resultSummary.textContent =
+        `Based on: ${goalName} • ${ageName} • ${energyName} energy. ` +
+        `Suggestions are general wellness guidance, not medical advice.`;
+
+      recommendations.forEach(item => {
+        const ex = item.exercise;
+        const matchLabel = getMatchLabel(item.score, item.exactGoal);
+
+        const card = document.createElement("article");
+        card.className =
+          "bg-white border border-sage-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between";
+
+        card.innerHTML = `
+          <div>
+            <div class="flex justify-between items-start gap-3 mb-3">
+              <span class="bg-sage-100 text-sage-700 text-xs px-2.5 py-1 rounded-md font-semibold uppercase tracking-wider">
+                ${ex.goal}
+              </span>
+              <span class="text-xs text-slate-400 font-medium text-right">
+                ${ex.duration}
+              </span>
+            </div>
+
+            <div class="mb-3">
+              <span class="inline-flex text-[11px] font-semibold px-2 py-1 rounded-full
+                ${item.exactGoal ? "bg-sage-50 text-sage-700" : "bg-slate-100 text-slate-600"}">
+                ${matchLabel}
+              </span>
+            </div>
+
+            <h4 class="text-lg font-bold text-slate-900 mb-2">${ex.name}</h4>
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">${ex.instructions}</p>
+          </div>
+
+          <div class="space-y-3 pt-3 border-t border-slate-100 text-xs">
+            <div class="bg-amber-50 text-amber-900 p-2.5 rounded-lg border border-amber-200/40">
+              <strong>🛡️ Safety Tip:</strong> ${ex.safetyTip}
+            </div>
+
+            <div class="bg-sage-50 text-sage-800 p-2.5 rounded-lg">
+              <strong>💡 Easier Alternative:</strong> ${ex.easierAlternative}
+            </div>
+          </div>
+        `;
+
+        resultsContainer.appendChild(card);
+      });
+    }
+
+    routineForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const goal = document.getElementById("goal").value;
+      const ageGroup = document.getElementById("ageGroup").value;
+      const energyLevel = document.getElementById("energyLevel").value;
+
+      const recommendations = getRecommendations(goal, ageGroup, energyLevel);
+
+      renderResults(recommendations, goal, ageGroup, energyLevel);
+
+      setTimeout(() => {
+        resultsContainer.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 50);
+    });
+
+    /* =========================================================
+       4. WATER TRACKER
+       ========================================================= */
+    const WATER_KEY = "ayufit_water_count";
+    const waterContainer = document.getElementById("waterGlasses");
+    const waterCountText = document.getElementById("waterCountText");
+
+    let waterCount = Math.min(
+      8,
+      Math.max(0, parseInt(localStorage.getItem(WATER_KEY), 10) || 0)
+    );
+
+    function renderWaterTracker() {
+      waterContainer.innerHTML = "";
+
+      for (let i = 1; i <= 8; i++) {
+        const glass = document.createElement("button");
+        glass.type = "button";
+        glass.setAttribute("aria-label", `Log ${i} glasses of water`);
+        glass.className =
+          "w-8 h-10 rounded-lg flex items-center justify-center text-sm transition border " +
+          (i <= waterCount
+            ? "bg-sage-600 text-white border-sage-600 shadow-sm"
+            : "bg-white text-slate-400 border-sage-200 hover:bg-sage-50");
+
+        glass.innerHTML = "💧";
+
+        glass.addEventListener("click", () => {
+          waterCount = i === waterCount ? i - 1 : i;
+          localStorage.setItem(WATER_KEY, String(waterCount));
+          renderWaterTracker();
+        });
+
+        waterContainer.appendChild(glass);
+      }
+
+      waterCountText.textContent = `${waterCount} / 8 Glasses Logged`;
+    }
+
+    /* =========================================================
+       5. MOVEMENT TRACKER
+       ========================================================= */
+    const MOVEMENT_KEY = "ayufit_movement_done";
+    const movementCheck = document.getElementById("movementCheck");
+    const movementStatusText = document.getElementById("movementStatusText");
+
+    let movementDone = localStorage.getItem(MOVEMENT_KEY) === "true";
+
+    function updateMovement() {
+      movementDone = movementCheck.checked;
+
+      localStorage.setItem(MOVEMENT_KEY, String(movementDone));
+
+      movementStatusText.textContent = movementDone
+        ? "Status: Completed ✓"
+        : "Status: Pending";
+
+      movementStatusText.className = movementDone
+        ? "text-xs font-semibold text-sage-700"
+        : "text-xs font-medium text-slate-400";
+    }
+
+    movementCheck.checked = movementDone;
+    movementCheck.addEventListener("change", updateMovement);
+
+    /* =========================================================
+       6. RESET FUNCTIONALITY
+       ========================================================= */
+    const resetTracker = document.getElementById("resetTracker");
+    const trackerMessage = document.getElementById("trackerMessage");
+
+    function showTrackerMessage(message) {
+      trackerMessage.textContent = message;
+      trackerMessage.classList.remove("hidden");
+
+      clearTimeout(window.ayufitMessageTimer);
+      window.ayufitMessageTimer = setTimeout(() => {
+        trackerMessage.classList.add("hidden");
+      }, 2500);
+    }
+
+    resetTracker.addEventListener("click", () => {
+      waterCount = 0;
+      movementDone = false;
+
+      localStorage.removeItem(WATER_KEY);
+      localStorage.removeItem(MOVEMENT_KEY);
+
+      movementCheck.checked = false;
+      renderWaterTracker();
+      updateMovement();
+
+      showTrackerMessage("Tracker data has been reset.");
+    });
+
+    /* Initial render */
+    renderWaterTracker();
+    updateMovement();
+  </script>
+</body>
+</html>
